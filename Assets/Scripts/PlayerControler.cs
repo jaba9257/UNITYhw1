@@ -51,6 +51,10 @@ public class PlayerController : MonoBehaviour
         {
             HandleJump();
         }
+        if(isGrounded && gameObject.transform.position.y > 0.0001f && !isJumping)
+        {
+            gameObject.transform.position = new Vector3(gameObject.transform.position.x, 0f, gameObject.transform.position.z);
+        }
     }
 
     void CheckGround()
